@@ -1,0 +1,271 @@
+{/* CSE703016 Project Post Template
+  *
+  * This template aims to guide you in how to use the supported syntax.
+  *
+  * You should refer to the assignment description for details on what content is expected.
+  *
+  * If you delete or modify template content that you later find you need,
+  * the original template can also be found in `/src/app/projects/template/page.mdx`.
+  *
+  * Note this template's use of comment syntax.
+  * Curly brackets delineate a code block, within which you can then initiate a comment.
+  * The column of `*` characters has no effect and is included only for readability.
+  */}
+
+{/* Tool Documentation
+  *
+  * This post is primarily formatted in Markdown.
+  * For one example of how to use Markdown, see <https://www.markdownguide.org/>.
+  *
+  * The post then uses [MDX](https://mdxjs.com/) to embedded JSX components.
+  * You are not expected to fully understand these components,
+  * but can just embed them in your Markdown like you would any HTML tag.
+  */}
+
+{/* Project Imports
+  *
+  * These import components for use in your post.
+  * You could inspect those components, but this template is intended to be sufficient.
+  *
+  * The full [MUI](https://mui.com/material-ui/getting-started/overview/) component library is also available,
+  * but we do not expect or recommend you will need or want additional components.
+  * If you find the provided components insufficient, we encourage you to check in with the course staff.
+  */}
+
+import { ProjectImageBlock } from "@/components/project/ProjectImageBlock";
+import { ProjectImagesBlock } from "@/components/project/ProjectImagesBlock";
+import { ProjectSubtitle } from "@/components/project/ProjectSubtitle";
+import { ProjectTeamGallery } from "@/components/project/ProjectTeamGallery";
+
+{/* Image Imports
+  *
+  * Every image should be imported via its path in your `images` directory.
+  * - Note that directory is within `public/images/projects`.
+  * - These imports all reference the `template` project, you will reference your own project directory.
+  * - Only `.jpg` and `.png` file extensions are supported.
+  * - If an import is not working, double-check that you have the correct file extension.
+  */}
+
+{/* Team Gallery Images
+  *
+  * - Give your images meaningful names (e.g., "james.png").
+  * - Images will be rendered 125px wide.
+  *   - Be sure all images are already cropped and scaled to be 125px wide and 150px tall.
+  */}
+
+# Money Map
+
+<ProjectSubtitle>Quản lý tài chính</ProjectSubtitle>
+
+## Group 9
+
+{/* The ProjectTeamGallery displays names and images of your project team.
+  * - As above, crop and scale your images to be the size of the placeholder.
+  *   This consistent image size provides a cleaner gallery.
+  */}
+<ProjectTeamGallery members={[
+    {
+        name: ["Leader", "Đinh Minh Khánh"],
+        photo: "images/projects/Money_Map/team/firstname1.png",
+    },
+    {
+        name: ["Member", "Đoàn Đức Minh"],
+        photo: "images/projects/Money_Map/team/firstname2.png",
+    },
+    {
+        name: ["Member", "Trần Tùng Lâm"],
+        photo: "images/projects/Money_Map/team/firstname3.png",
+    },
+    {
+        name: ["Member", "Vũ Khánh Minh"],
+        photo: "images/projects/Money_Map/team/firstname4.png",
+    },
+]} />
+
+## Vấn đề và Tổng quan thiết kế
+
+{/* A ProjectImageBlock displays text with an associated image.
+  * - The image is configured through properties on the opening `ProjectImageBlock` tag.
+  * - Text is placed within the opening and closing `ProjectImageBlock` tags.
+  * - In a small browser window, the image will be rendered below the text.
+  * - In a large browser window, the image will be rendered on the right.
+  *
+  * - The width property controls how much of the grid is assigned to the image column.
+  *   Values can be 4 (the smallest image), 6 (half the width of the page), or 8 (the largest image).
+  *
+  * - The maxHeight property controls the rendered height of an image.
+  *   Although the image here is 1200x800, maxHeight limits its rendered height to 400px.
+  *   If not specified, the default maxHeight is 400px.
+  *
+  * Later in the template you will also find examples of the plural `ProjectImagesBlock` tag.
+*/}
+
+<ProjectImageBlock
+    image={{
+        src: "images/projects/Money_Map/post/1200x800.png",
+        alt: "Every image requires alt text. This should describe the content of that image."
+    }}
+    caption={
+        "Lập kế hoạch cho các khoản thu nhập, tiền tiết kiệm, vv giúp đạt được những lợi ích dài hạn để tối ưu hóa tài chính của bạn!"
+    }
+    width={6}
+    maxHeight={"400px"}
+>
+
+Vấn đề chính mà ứng dụng quản lý tài chính muốn giải quyết là việc thiếu sự kiểm soát và hiểu biết về tình hình tài chính cá nhân của người dùng. Nhiều người gặp khó khăn trong việc theo dõi chi tiêu hàng ngày, lập ngân sách, đặt mục tiêu tiết kiệm, và quản lý các khoản đầu tư dài hạn. Việc không có kế hoạch tài chính rõ ràng thường dẫn đến tình trạng chi tiêu quá mức, không đạt được các mục tiêu tài chính như mong muốn, và thiếu hụt dự trữ tiền trong trường hợp khẩn cấp.
+
+Thiết kế ứng dụng tập trung vào cung cấp cho người dùng một giao diện dễ sử dụng, giúp theo dõi các khoản chi tiêu, quản lý ngân sách, và đưa ra những dự đoán tài chính trong tương lai. Ứng dụng cung cấp các công cụ mạnh mẽ như bảng điều khiển (dashboard) hiển thị các chỉ số tài chính, biểu đồ minh họa tiến độ tiết kiệm, và các cảnh báo khi người dùng có nguy cơ vượt quá ngân sách. Điều này giúp người dùng dễ dàng nắm bắt tình hình tài chính, điều chỉnh thói quen chi tiêu, và thực hiện các quyết định tài chính sáng suốt hơn.
+
+Thiết kế của ứng dụng cũng tích hợp các tính năng tự động phân tích và khuyến nghị tài chính, giúp người dùng tối ưu hóa các khoản tiết kiệm và đầu tư dựa trên hành vi và mục tiêu cá nhân. Các tính năng này nhằm hỗ trợ người dùng xây dựng lối sống tài chính lành mạnh và hướng đến sự ổn định tài chính trong dài hạn.
+
+</ProjectImageBlock>
+
+## Quá trình nghiên cứu thiết kế và Các vấn đề chủ yếu của người dùng
+
+Quá trình nghiên cứu thiết kế tập trung vào việc tìm hiểu cách người dùng quản lý tài chính cá nhân, từ việc theo dõi chi tiêu hàng ngày đến lập kế hoạch tiết kiệm dài hạn. Để hiểu sâu hơn về thói quen và nhu cầu của người dùng, chúng tôi đã sử dụng phương pháp điều tra ngữ cảnh (contextual inquiry) và phỏng vấn chi tiết. Thông qua việc quan sát và tương tác với người dùng, chúng tôi nhận thấy rằng nhiều người gặp khó khăn trong việc theo dõi chính xác các khoản chi tiêu hàng ngày do thiếu công cụ tự động hoặc việc cập nhật không đồng nhất.
+
+### Khó khăn trong việc theo dõi chi tiêu hàng ngày
+
+Người dùng thường bỏ lỡ các giao dịch nhỏ, dẫn đến thiếu thông tin để kiểm soát chi tiêu.
+
+### Thiếu kế hoạch tài chính dài hạn
+
+<ProjectImagesBlock
+    images={[
+        {
+            src: "images/projects/Money_Map/post/1.png",
+            alt: "Every image requires alt text. This should describe the content of that image.",
+            caption: "Không có kế hoạch chi tiêu",
+        },
+        {
+            src: "images/projects/Money_Map/post/2.png",
+            alt: "Every image requires alt text. This should describe the content of that image.",
+            caption: "Không kiểm soát được biến cố tài chính",
+        },
+    ]}
+    direction={"row"}
+    width={8}
+    maxHeight={"100px"}
+>
+
+Hầu hết người dùng không có kế hoạch cụ thể cho các mục tiêu tài chính dài hạn như mua nhà hoặc du lịch.
+
+</ProjectImagesBlock>
+
+### Không kiểm soát được các khoản chi tiêu bất ngờ
+
+Những chi phí không dự đoán trước (ví dụ như sửa chữa đột xuất) gây ảnh hưởng lớn đến ngân sách cá nhân.
+
+## Quy trình thiết kế lặp và Các nhu cầu của người dùng
+
+Quy trình thiết kế lặp đi lặp lại giúp chúng tôi cải thiện sản phẩm liên tục dựa trên phản hồi của người dùng và quá trình thử nghiệm. Thông qua nhiều vòng lặp thiết kế, chúng tôi đã tiếp cận gần hơn với giải pháp phù hợp cho nhu cầu tài chính của người dùng.
+
+### Cần kế hoạch ngân sách hàng tháng
+
+<ProjectImageBlock
+    image={{
+        src: "images/projects/Money_Map/post/3.png",
+        alt: "Every image requires alt text. This should describe the content of that image.",
+    }}
+    caption={
+        "Lập kế hoạch để giới hạn ngân sách"
+    }
+    width={6}
+    maxHeight={"400px"}
+>
+
+Người dùng cần thiết lập một ngân sách hàng tháng để quản lý thu nhập và chi tiêu.
+Nhiệm vụ này yêu cầu người dùng xác định các giới hạn chi tiêu cho từng danh mục (ví dụ: 3 triệu đồng cho thực phẩm, 2 triệu đồng cho giải trí) và theo dõi việc bám sát ngân sách này trong suốt tháng. Hệ thống sẽ đưa ra cảnh báo khi người dùng vượt quá giới hạn ngân sách.
+
+</ProjectImageBlock>
+
+### Cần quản lý các khoản đầu tư
+<ProjectImageBlock
+    image={{
+        src: "images/projects/Money_Map/post/4.png",
+        alt: "Every image requires alt text. This should describe the content of that image.",
+    }}
+    caption={
+        "Đơn giản hóa tính toán khi đầu tư"
+    }
+    width={6}
+    maxHeight={"400px"}
+>
+
+Người dùng muốn theo dõi các khoản đầu tư cá nhân như chứng khoán hoặc tiền gửi tiết kiệm. Nhiệm vụ này cho phép người dùng nhập thông tin về các khoản đầu tư và theo dõi giá trị của chúng theo thời gian. Hệ thống sẽ hiển thị tình hình lợi nhuận hoặc lỗ từ các khoản đầu tư này, và giúp người dùng đánh giá khả năng tiếp tục hoặc rút vốn.
+
+</ProjectImageBlock>
+
+### Cần tự động phân tích và khuyến nghị tài chính
+
+<ProjectImageBlock
+    image={{
+        src: "images/projects/Money_Map/post/5.png",
+        alt: "Every image requires alt text. This should describe the content of that image.",
+    }}
+    caption={
+        "Hệ thống hỗ trợ giúp người dùng không cần tự tính nữa"
+    }
+    width={6}
+    maxHeight={"400px"}
+>
+
+Hệ thống sẽ tự động phân tích dữ liệu tài chính cá nhân của người dùng và cung cấp các khuyến nghị về việc cắt giảm chi tiêu hoặc tối ưu hóa tiết kiệm. Ví dụ, hệ thống có thể khuyến nghị người dùng cắt giảm chi tiêu trong danh mục giải trí để tăng tỷ lệ tiết kiệm cho mục tiêu dài hạn. Nhiệm vụ này yêu cầu hệ thống đưa ra các gợi ý thực tế dựa trên hành vi tài chính của người dùng.
+</ProjectImageBlock>
+
+## Kết quả thiết kế
+
+<ProjectImagesBlock
+    images={[
+        {
+            src: "images/projects/Money_Map/post/web1.png",
+            alt: "Every image requires alt text. This should describe the content of that image.",
+        },
+        {
+            src: "images/projects/Money_Map/post/web2.png",
+            alt: "Every image requires alt text. This should describe the content of that image.",
+        },
+    ]}
+    direction={"row"}
+    caption={
+        "Giao diện web"
+    }
+    width={6}
+    maxHeight={"100px"}
+>
+
+Ứng dụng quản lý tài chính Money Map có trên các nền tảng: web, điện thoại và smartwatch
+
+**Trên web**
+
+Phiên bản web của ứng dụng quản lý tài chính cung cấp một cái nhìn toàn diện hơn, phù hợp cho những người dùng cần quản lý tài chính chi tiết và thực hiện các phân tích sâu hơn. Với giao diện dạng bảng điều khiển (dashboard), người dùng có thể dễ dàng theo dõi tình hình tài chính tổng quan, bao gồm chi tiêu, thu nhập, mục tiêu tiết kiệm và các khoản đầu tư. Các công cụ phân tích và dự báo tài chính cũng được tích hợp giúp người dùng có thể lập kế hoạch tài chính dài hạn một cách hiệu quả. Phiên bản web hỗ trợ tích hợp dữ liệu từ điện thoại và đồng hồ thông minh để mang lại sự đồng bộ trong việc quản lý tài chính cá nhân.
+
+</ProjectImagesBlock>
+
+<ProjectImagesBlock
+    images={[
+        {
+            src: "images/projects/Money_Map/post/mobile.png",
+            alt: "Every image requires alt text. This should describe the content of that image.",
+            caption: "Giao diện điện thoại"
+        },
+        {
+            src: "images/projects/Money_Map/post/watch.png",
+            alt: "Every image requires alt text. This should describe the content of that image.",
+            caption: "Giao diện smartwatch"
+        },
+    ]}
+    direction={"column"}
+    width={6}
+    maxHeight={"200px"}
+>
+
+**Trên điện thoại**
+
+Ứng dụng quản lý tài chính trên điện thoại được thiết kế nhằm giúp người dùng dễ dàng theo dõi và quản lý tài chính hàng ngày. Với giao diện đơn giản và thân thiện, người dùng có thể nhập chi tiêu, thu nhập, và theo dõi các danh mục như ăn uống, giải trí, và tiết kiệm. Tính năng thông báo sẽ giúp người dùng cập nhật tình hình chi tiêu và đưa ra cảnh báo khi họ sắp vượt quá ngân sách đã đặt. Ứng dụng cũng cung cấp biểu đồ trực quan để người dùng dễ dàng nắm bắt tình hình tài chính tổng quan.
+
+**Trên smartwatch**
+
+Ứng dụng quản lý tài chính trên đồng hồ thông minh tập trung vào việc cung cấp thông tin nhanh chóng và tiện lợi cho người dùng khi không cần mở điện thoại. Với giao diện tối giản, người dùng có thể dễ dàng kiểm tra số dư ngân sách, nhận thông báo về chi tiêu, và theo dõi tiến độ tiết kiệm ngay trên màn hình nhỏ của đồng hồ. Tính năng nhắc nhở khi sắp vượt ngân sách cũng được tích hợp để đảm bảo người dùng luôn nắm được tình hình tài chính của mình chỉ bằng vài thao tác vuốt hoặc chạm nhẹ.
+
+</ProjectImagesBlock>
